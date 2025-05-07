@@ -1,103 +1,149 @@
-import Image from "next/image";
+// app/page.tsx
+import Link from 'next/link';
+import Image from 'next/image';
 
-export default function Home() {
+export const metadata = {
+  title: 'Accueil – Lorraine Call Center',
+  description: 'Votre permanence téléphonique médicale de confiance',
+};
+
+export default function HomePage() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+    <>
+      {/* Hero Section */}
+      <section className="bg-gray-100 py-12">
+        <div className="container mx-auto flex flex-col md:flex-row items-center">
+          <div className="md:w-1/2 mb-8 md:mb-0">
+            <h1 className="text-4xl font-bold mb-4">
+              Votre permanence téléphonique médicale de confiance
+            </h1>
+            <p className="mb-6">
+              Depuis plus de 25 ans, notre permanence téléphonique médicale met son
+              expertise au service de l’accueil téléphonique et de la gestion des
+              patients, alliant bien-être et efficience pour votre cabinet.
+            </p>
+            <Link
+              href="/contact"
+              className="bg-blue-700 text-white px-6 py-3 rounded"
+            >
+              Demander un devis
+            </Link>
+          </div>
+          <div className="md:w-1/2">
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+              src="/images/hero-secretaire.jpg"
+              alt="Secrétaire médicale"
+              width={600}
+              height={400}
+              className="rounded"
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </section>
+
+      {/* Core Services Preview */}
+      <section className="py-12">
+        <div className="container mx-auto text-center">
+          <h2 className="text-3xl font-bold mb-4">Découvrez nos services</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="border p-6 rounded">
+              <h3 className="text-xl font-semibold mb-2">
+                Permanence téléphonique médicale
+              </h3>
+              <p>
+                Gestion complète de vos appels du lundi au vendredi de 8h à 20h et
+                le samedi de 8h à 12h. Disponibilité, professionnalisme et écoute.
+              </p>
+            </div>
+            <div className="border p-6 rounded">
+              <h3 className="text-xl font-semibold mb-2">
+                Télésecrétariat médical
+              </h3>
+              <p>
+                Prise de rendez-vous en ligne et gestion d’agendas via Doctolib et
+                Maiia, accessible 24h/24 et 7j/7 depuis tous vos appareils.
+              </p>
+            </div>
+            <div className="border p-6 rounded">
+              <h3 className="text-xl font-semibold mb-2">Assistance & Support</h3>
+              <p>
+                Service 100% personnalisé : pré-décroché, boîtes vocales et accueil
+                adaptés à votre charte qualité.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Call Centers Section */}
+      <section className="bg-gray-100 py-12">
+        <div className="container mx-auto grid md:grid-cols-2 gap-8">
+          <div>
+            <h2 className="text-2xl font-bold mb-2">
+              Paris et région parisienne
+            </h2>
+            <p>3 allée Hector Berlioz, 95130 Franconville</p>
+            <p>Tél. : 0800 80 07 83</p>
+          </div>
+          <div>
+            <h2 className="text-2xl font-bold mb-2">
+              Metz, région Lorraine
+            </h2>
+            <p>13 rue de Champagne, 57070 Metz</p>
+            <p>Tél. : 0800 80 05 40</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Statistics */}
+      <section className="py-12">
+        <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+          <div>
+            <h3 className="text-4xl font-bold">25</h3>
+            <p>ans d&apos;expérience</p>
+          </div>
+          <div>
+            <h3 className="text-4xl font-bold">50+</h3>
+            <p>agents dédiés</p>
+          </div>
+          <div>
+            <h3 className="text-4xl font-bold">100%</h3>
+            <p>satisfaction client</p>
+          </div>
+        </div>
+      </section>
+
+      {/* News Preview */}
+      <section className="bg-gray-100 py-12">
+        <div className="container mx-auto">
+          <h2 className="text-3xl font-bold mb-4">Suivez nos actualités</h2>
+          <ul className="space-y-4">
+            <li>
+              <Link href="/actualites" className="text-blue-700 hover:underline">
+                Voir toutes les actualités
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      {/* Contact Call-to-Action */}
+      <section className="py-12">
+        <div className="container mx-auto text-center">
+          <h2 className="text-3xl font-bold mb-4">
+            Une question ? Une demande de devis ?
+          </h2>
+          <p className="mb-6">
+            Contactez-nous via notre page dédiée ou appelez-nous selon votre région.
+          </p>
+          <Link
+            href="/contact"
+            className="bg-blue-700 text-white px-6 py-3 rounded"
+          >
+            Nous contacter
+          </Link>
+        </div>
+      </section>
+    </>
   );
 }

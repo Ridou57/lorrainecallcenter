@@ -35,17 +35,16 @@ export default function RootLayout({
             <Link href="/" className="text-2xl font-bold">
               Lorraine Call Center
             </Link>
-            <nav className="space-x-4">
-              <Link href="/" className="hover:underline">
-                Accueil
-              </Link>
-              <Link href="/services" className="hover:underline">
-                Services
-              </Link>
-              <Link href="/faq" className="hover:underline">
-                FAQ
-              </Link>
-            </nav>
+           <nav className="space-x-4">
+  <Link href="/" className="hover:underline">Accueil</Link>
+  <Link href="/qui-sommes-nous" className="hover:underline">Qui sommes-nous</Link>
+  <Link href="/services" className="hover:underline">Services</Link>
+  <Link href="/partenaires" className="hover:underline">Nos partenaires</Link>
+  <Link href="/actualites" className="hover:underline">Actualités</Link>
+  <Link href="/faq" className="hover:underline">FAQ</Link>
+  <Link href="/contact" className="hover:underline">Contact</Link>
+</nav>
+
           </div>
         </header>
 

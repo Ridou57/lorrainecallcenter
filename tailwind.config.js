@@ -1,8 +1,9 @@
 /** @type {import('tailwindcss').Config} */
+const typography = require('@tailwindcss/typography');
+
 module.exports = {
   content: [
     './app/**/*.{js,ts,jsx,tsx}',
-    './src/app/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
@@ -10,6 +11,7 @@ module.exports = {
       colors: {
         primary: '#005FA8',   // bleu sombre
         accent: '#FFD200',    // jaune clair
+        secondary: '#F7F9FC', // optionnel pour sections claires
       },
       fontFamily: {
         sans: ['Geist Sans', 'ui-sans-serif', 'system-ui'],
@@ -17,5 +19,7 @@ module.exports = {
       },
     },
   },
-  plugins: [],
-}
+  plugins: [
+    typography,
+  ],
+};
